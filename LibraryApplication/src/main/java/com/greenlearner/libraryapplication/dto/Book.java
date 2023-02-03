@@ -11,17 +11,16 @@ import java.io.Serializable;
 @Table(name = "book")
 public class Book implements Serializable{
 
-
     private static final long serialVersionUID = 1307525040224585678L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String category;
     private String author;
     private String publisher;
-    private String edition;
+    private Integer edition;
 
     public long getId() {
         return id;
@@ -63,11 +62,11 @@ public class Book implements Serializable{
         this.publisher = publisher;
     }
 
-    public String getEdition() {
+    public Integer getEdition() {
         return edition;
     }
 
-    public void setEdition(String edition) {
+    public void setEdition(Integer edition) {
         this.edition = edition;
     }
 }
